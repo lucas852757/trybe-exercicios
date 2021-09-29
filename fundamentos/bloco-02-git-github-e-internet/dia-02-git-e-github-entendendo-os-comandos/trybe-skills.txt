@@ -3,6 +3,4 @@
 -Git
 -HTML
 -CSS
--JavaScript
--Java
-Node JS
+-Ciência da Computação
