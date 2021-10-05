@@ -1,0 +1,37 @@
+
+        h1{
+            size: 65px;
+            color: orange;
+            font-family: sans-serif;
+            font-style: italic;
+            text-align: center;
+            
+        }
+        .cor{
+                background-color: brown;
+            }
+        .cor-tag-p-e-ul{
+            background-color: aqua;
+        }
+        .peso{
+            font-weight: 600;
+        }
+        body{
+            font: size 16px;
+        }
+        .xBody{
+            font-size: 3em;
+        }
+        .amarelo{
+            background-color: yellow;
+            text-decoration: line-through;
+        }
+        .verde{
+            background-color: green;
+        }
+        .marrom{
+            background-color: brown;
+        }
+        .alturaDaLinha{
+            line-height:80px;
+        }
