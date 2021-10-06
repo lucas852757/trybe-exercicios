@@ -1,0 +1,31 @@
+div:hover{
+  border-style:solid;
+}
+
+.cor1 {
+  background-color: #dff0ad;
+}
+
+.cor2 {
+  background-color: #00BCDB;
+}
+
+.cor3 {
+  background-color: #5d01f0;
+}
+.cor4 {
+  background-color: #db0d00;
+}
+.cor {
+  background-color: #FFB308;
+}
+
+h3 {
+  text-align: center;
+}
+.dv3 {
+  font-size: 50px;
+}
+.tags_impares {
+  font-style: italic;
+}
