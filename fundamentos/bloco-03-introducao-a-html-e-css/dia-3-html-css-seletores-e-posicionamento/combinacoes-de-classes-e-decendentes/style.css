@@ -1,0 +1,42 @@
+.amarelo {
+  background-color: yellow;
+}
+.verde {
+  color:green;
+}
+.maiusculo {
+  text-transform: uppercase;
+}
+h1, h3 {
+  color:red;
+}
+
+li {
+  font-size: 20px;
+}
+li em {
+  font-size: 40px;
+  border: 1px solid black;
+  font: weight 400px;;
+}
+.azul {
+  background-color: blue;
+}
+.rosa {
+  background-color:pink;
+}
+.stackOverFlow:hover {
+  background-color: orange;
+}
+.w3schools:hover {
+  background-color: green;
+}
+.mdn:hover {
+  background-color: black;
+}
+.dvdocs:hover {
+  background-color: yellow;
+}
+.trybe:hover {
+  background-color: green;
+}
