@@ -5,5 +5,5 @@ if (guarda > 0) {
 }else if (guarda < 0) {
   console.log("negative");
 }else {
-  console.log("zero");
+  console.log("zero")
 }
