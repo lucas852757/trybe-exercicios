@@ -4,13 +4,13 @@ let store = [17, 30, 5, 25];
 
 function arrayInterger(block) {
   let length = block.length;
-  let storeGrater;
+  let storageGrater;
   let indexReturner;
   for (let index = 0, count = 0; index < length; index += 1, count += 1) {
     if (count == 0) {
-      storeGrater = block[index];
-    } else if (storeGrater < block[index]) {
-      storeGrater = block[index];
+      storageGrater = block[index];
+    } else if (storageGrater < block[index]) {
+      storageGrater = block[index];
       indexReturner = index;
     }
   }

@@ -4,13 +4,13 @@ let store = [2, 4, 6, 7, 10, 0, -3];
 
 function arrayInterger(block) {
   let length = block.length;
-  let storeLesser;
+  let storageLesser;
   let indexReturner;
   for (let index = 0, count = 0; index < length; index += 1, count += 1) {
     if (count == 0) {
-      storeLesser = block[index];
-    } else if (storeLesser > block[index]) {
-      storeLesser = block[index];
+      storageLesser = block[index];
+    } else if (storageLesser > block[index]) {
+      storageLesser = block[index];
       indexReturner = index;
     }
   }
