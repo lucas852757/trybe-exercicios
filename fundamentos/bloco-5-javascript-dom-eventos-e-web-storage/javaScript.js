@@ -23,3 +23,10 @@ changeBackGroundColor('center-content', 'white');
 
 /*Muda a cor do quadrado vermelho para branco. */
 
+//Exercício 4
+function ChangeTitle(element, title) {
+  document.getElementsByTagName('h1')[0].innerText= title;
+}
+
+ChangeTitle('h1','Exercicio5.1 - JavaScript');
+/* Corrige o texto da tag h1 . */
