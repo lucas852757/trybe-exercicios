@@ -30,3 +30,17 @@ function ChangeTitle(element, title) {
 
 ChangeTitle('h1','Exercicio5.1 - JavaScript');
 /* Corrige o texto da tag h1 . */
+
+//Exercício 5
+function upperText (element, index) {
+let a = document.getElementsByTagName(element)[index].innerText.toUpperCase();
+document.getElementsByTagName(element)[index].innerText= a;
+}
+
+upperText('p', '0');
+upperText('p', '2');
+/* Textos em maiúsculo*/
+
+
+ 
+
