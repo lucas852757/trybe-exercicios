@@ -80,6 +80,16 @@
       img.className = 'small-image';
       img.src='http://picsum.photos/200';
       newSection1.appendChild(img);
+      let ul = document.createElement('ul');
+      newSection2.appendChild(ul);
+      
+      numbers = ['um','dois','três','quatro','cinco','seis','sete','oito','nove','dez'];
+      length = numbers.length
+      for (index = 0; index < length; index += 1) {
+        let li = document.createElement('li');
+        ul.appendChild(li).innerText = numbers[index];
+      }
+      
     </script>
   </body>
 </html>
