@@ -74,7 +74,7 @@
       newSection1.className = 'left-content';
       newMain.appendChild(newSection1);
       let newSection2 = document.createElement('section');
-      newSection2.className = 'rigth-content';
+      newSection2.className = 'right-content';
       newMain.appendChild(newSection2);
       let img = document.createElement('img');
       img.className = 'small-image';
@@ -85,17 +85,28 @@
 
       numbers = ['um','dois','três','quatro','cinco','seis','sete','oito','nove','dez'];
       length = numbers.length
+      
       for (index = 0; index < length; index += 1) {
         let li = document.createElement('li');
+        li.className = 'numbers';
         ul.appendChild(li).innerText = numbers[index];
       }
     
       for ( index = 0; index < 3; index += 1) {
         let tagH3 = document.createElement('h3');
-      newMain.appendChild(tagH3);
+        tagH3.className = 'decription';
+        newMain.appendChild(tagH3);
       }
-      
-      
+
+      newElementH1.className = 'title';
+      newMain.removeChild(newSection1);
+      newSection2.style.marginLeft =' 50%';
+      newSection.style.backgroundColor='green';
+
+      let a = document.querySelectorAll('.numbers');
+      for (let v = 0; v < a.length; v += 1){
+        console.log(a[v]);
+      }
     </script>
   </body>
 </html>
