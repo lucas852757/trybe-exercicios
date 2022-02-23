@@ -34,7 +34,7 @@ const list = ['O conteúdo é: '+`${conteudo}`, 'Bloco: '+`${bloco}`, 'Status: '
 
 class Content extends React.Component {
   render() {
-    return <p>{list.map((element) => Task(element))}</p>
+    return <p key={}>{list.map((element) => Task(element))}</p>
   }
 }
 
