@@ -1,7 +1,7 @@
-const readline = require('readline-sync');
+import { questionFloat } from 'readline-sync';
 
-const peso = readline.questionFloat('Peso: ');
-const altura = readline.questionFloat('Altura: ');
+const peso = questionFloat('Peso: ');
+const altura = questionFloat('Altura: ');
 const  r = peso / altura ** 2;
 console.log(`R ${r} `);
 

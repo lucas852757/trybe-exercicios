@@ -1,18 +1,17 @@
 {
-  "name": "my-scripts",
+  "name": "sorteio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "imc": "node imc.js",
-    "sorteio": "node sorteio.js",
-    "velocidade": "node velocidade.js"
+    "start": "node sorteio.js",
+    "sorteio": "node sorteio.js"
   },
   "author": "Lucas",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "readline-sync": "^1.4.10"
   }
 }
