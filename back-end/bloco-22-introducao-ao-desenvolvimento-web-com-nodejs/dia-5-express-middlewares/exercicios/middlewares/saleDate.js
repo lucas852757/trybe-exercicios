@@ -6,7 +6,6 @@ const  validateSaleDate = (req, res, next) => {
 	const newCalender = [y, m, d].toString();
 
 	if(infos.saleDate.match(regex) === null  || !Date.parse(newCalender) ) return res.status(400).json({mesage: 'O campo saleDate não é uma data válida'});
-	/* return res.status(200).end(); */
 	next();
 };
 
