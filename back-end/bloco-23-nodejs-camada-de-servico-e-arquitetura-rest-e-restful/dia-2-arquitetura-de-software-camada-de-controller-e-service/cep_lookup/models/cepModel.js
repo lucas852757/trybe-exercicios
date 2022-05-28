@@ -28,6 +28,14 @@ const getNewCep = ({ cep, logradouro, bairro, localidade, uf }) => ({
     return getNewCep(result);
   };
 
+  const create = async ({cep: rawCep, logradouro, bairro, localidade, uf}) => {
+    const cep = rawCep.replace('-', '');
+    const query = 'insert into cep_lookup.ceps values (?,?,?,?,?)';
+    await (await connection).execute(query, [cep, logradouro, bairro, localidade, uf]);
+
+    return {cep, logradouro, bairro, localidade, uf};
+  } 
   module.exports = {
     findAddressbyCep,
+    create,
   }
