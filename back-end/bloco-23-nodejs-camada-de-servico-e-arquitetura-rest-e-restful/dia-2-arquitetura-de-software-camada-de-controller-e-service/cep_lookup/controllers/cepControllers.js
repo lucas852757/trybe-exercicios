@@ -10,6 +10,14 @@ const findAddressbyCep = async (req, res, next) => {
   }
 };
 
+const addNewCep = async (req, res, next) => {
+  try {
+    const {cep, logradouro, bairro, localidade, uf} = req.body;
+    return cepServices.create({cep, logradouro, bairro, localidade, uf});
+  } catch (error) {
+    return next(error);
+  }
+}
 module.exports = {
   findAddressbyCep,
 }
