@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 const connection = require('./connection');
 
 const CEP_REGEX = /\d{5}-\d{3}/;
@@ -26,7 +27,11 @@ const getNewCep = ({ cep, logradouro, bairro, localidade, uf }) => ({
     const query = 'select cep, logradouro, bairro, localidade, uf from cep_lookup.ceps where cep=?';
     const [result] = await connection.execute(query,[treatedCep]);
 
-    if (!result.length) return null;
+    if (!result.length) {
+      const {data} =  await axios.get(`https://viacep.com.br/ws/${cepToSearch}/json/`);
+      return getNewCep(data);
+    }
+    //if (!result.length) return null;
   
     return getNewCep(result[0]);
   };
