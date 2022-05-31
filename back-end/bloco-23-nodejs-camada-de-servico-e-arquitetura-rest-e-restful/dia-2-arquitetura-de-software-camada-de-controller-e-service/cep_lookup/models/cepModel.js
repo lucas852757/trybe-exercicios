@@ -23,20 +23,19 @@ const getNewCep = ({ cep, logradouro, bairro, localidade, uf }) => ({
   uf});
 
   const findAddressbyCep = async (cepToSearch) => {
+    //console.log('->',cepToSearch);
     const treatedCep = cepToSearch.replace('-', '');
     const query = 'select cep, logradouro, bairro, localidade, uf from cep_lookup.ceps where cep=?';
     const [result] = await connection.execute(query,[treatedCep]);
 
-    if (!result.length) {
-      const {data} =  await axios.get(`https://viacep.com.br/ws/${cepToSearch}/json/`);
-      return getNewCep(data);
-    }
-    //if (!result.length) return null;
+    //console.log(result);
+    if (!result.length) return null;
   
     return getNewCep(result[0]);
   };
 
-  const create = async (cep, logradouro, bairro, localidade, uf) => {
+  const create = async ({cep, logradouro, bairro, localidade, uf}) => {
+    //console.log('->', cep);
     const cepWithoutRaw = cep.replace('-', '');
     const query = 'insert into cep_lookup.ceps values (?,?,?,?,?)';
     await connection.execute(query, [cepWithoutRaw, logradouro, bairro, localidade, uf]);

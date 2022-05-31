@@ -1,5 +1,5 @@
 const cepModles = require('../models/cepModel');
-
+const ViaCep = require('../models/ViaCep');
 const  findAddressbyCep = async(searchCep) => {
   const CEP_REGEX = /\d{5}-?\d{3}/;
   if(!CEP_REGEX.test(searchCep)) {
@@ -8,10 +8,26 @@ const  findAddressbyCep = async(searchCep) => {
   }
   const cep = await cepModles.findAddressbyCep(searchCep);
 
-  if(!cep){ return  { "error": { "code": "notFound", "message": "CEP não encontrado" } }
-  };
-  
-  return cep;
+  if (cep) {
+    return cep;
+  }
+
+  // Caso o CEP não exista no banco de dados, buscamos na API
+  const cepFromApi = await ViaCep.lookupCep(searchCep);
+
+  // Caso o CEP não exista na API,
+  // retornamos um erro dizendo que
+  // o CEP não foi encontrado
+  if (!cepFromApi) {
+    return {
+      error: {
+        code: 'notFound',
+        message: 'CEP não encontrado',
+      },
+    };
+  }
+
+  return cepModles.create(cepFromApi);
 };
 
 const create = async (cep, logradouro, bairro, localidade, uf) => {
@@ -34,6 +50,9 @@ const getAll = async() => {
   };
   return ceps;
 };
+
+
+
 module.exports ={
   findAddressbyCep,
   create,
