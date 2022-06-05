@@ -1,7 +1,5 @@
 const getCeps = () => {
-  const searchCepsDB = () => {
-
-  };
+   const searchCeps  = cepModels.searchCepsDB();
 };
 
 module.exports = {
