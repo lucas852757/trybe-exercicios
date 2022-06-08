@@ -1,4 +1,4 @@
-enum months {
+enum Months {
   Janeiro = 'Janeiro',
   Fevereiro= 'Fevereiro',
   Marco= 'Março',
@@ -13,4 +13,4 @@ enum months {
   Dezembro = 'Dezembro'
 };
 
-export default months;
+export default Months;
