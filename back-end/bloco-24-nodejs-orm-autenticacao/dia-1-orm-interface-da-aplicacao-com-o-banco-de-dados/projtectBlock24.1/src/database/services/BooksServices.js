@@ -7,6 +7,12 @@ const getAll = async () => {
   return book;
 }
 
+const getById = async (id) => {
+  const book = await Book.findByPk(id);
+  return book;
+}
+
 module.exports = {
   getAll,
+  getById,
 }
