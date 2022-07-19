@@ -13,7 +13,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    const books = await queryInterface.createTable('books', {
+    await queryInterface.createTable('Books', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -34,15 +34,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: DataTypes.DATE,
+        type: DataTypes.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: DataTypes.DATE,
+        type: DataTypes.DATE
       }
     })
-
-    return books;
   },
 
   /**
@@ -60,4 +58,3 @@ module.exports = {
     await queryInterface.dropTable('books')
   }
 };
-
