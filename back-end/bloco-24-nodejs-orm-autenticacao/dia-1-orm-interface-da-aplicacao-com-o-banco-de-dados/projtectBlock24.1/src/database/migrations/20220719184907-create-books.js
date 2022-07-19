@@ -6,7 +6,7 @@ module.exports = {
    * @param {import('sequelize').QueryInterface} queryInterface 
    * @param {import('sequelize').DataTypes} Sequelize 
    */
-  async up (queryInterface, Datatypes) {
+  async up (queryInterface, DataTypes) {
     /**
      * Add altering commands here.
      *
@@ -16,19 +16,30 @@ module.exports = {
     const books = await queryInterface.createTable('books', {
       id: {
         allowNull: false,
+        autoIncrement: true,
         primaryKey:true,
-        type: Datatypes.INTEGER
+        type: DataTypes.INTEGER
       },
       title: {
-        type: Datatypes.STRING
+        allowNull:false,
+        type: DataTypes.STRING,
       },
       author: {
-        type: Datatypes.STRING
+        allowNull: false,
+        type: DataTypes.STRING,
       },
       pageQuantity: {
-        type: Datatypes.STRING
+        allowNull: true,
+        type: DataTypes.INTEGER,
       },
-      
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      }
     })
 
     return books;
