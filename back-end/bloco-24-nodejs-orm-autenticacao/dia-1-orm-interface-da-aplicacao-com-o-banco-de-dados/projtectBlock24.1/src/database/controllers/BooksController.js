@@ -41,4 +41,5 @@ const create = async (req, res, next) => {
 module.exports = {
   getAll,
   getById,
+  create,
 }
