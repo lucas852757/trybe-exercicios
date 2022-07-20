@@ -6,6 +6,7 @@ const BooksController = require('./src/database/controllers/BooksController')
 
 app.use(express.json());
 
+app.post('/books/:id', BooksController.update)
 app.post('/books', BooksController.create)
 app.get('/books/:id', BooksController.getById);
 app.get('/books', BooksController.getAll);
