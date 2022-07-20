@@ -3,7 +3,7 @@
  */
 const {Book} = require('../models/index')
 const getAll = async () => {
-  const book = await Book.findAll();
+  const book = await Book.findAll({order:[['title', 'ASC'],]});
   return book;
 }
 
@@ -30,7 +30,7 @@ const destroy = async (id) => {
 };
 
 const getByAuthor = async (author) => {
-  const response = await Book.findAll({where: {author}});
+  const response = await Book.findAll({where: {author}, order:[['title','ASC' ]],});
   return response;
 }
 module.exports = {
