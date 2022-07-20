@@ -38,8 +38,26 @@ const create = async (req, res, next) => {
 
   res.status(201).json(book);
 }
+
+/**
+ * 
+ * @param {import('express').Request} req 
+ * @param {import('express').Response} res 
+ * @param {import('express').NextFunction} next 
+ */
+
+const update = async (req, res, next) => {
+  const { id } = req.params;
+  const { body } = req.body;
+
+  const book = await BooksServices.update(id, {title, author, pageQuantity });
+
+  if(book) return res.status(201).json({message: 'Book updated'});
+  res.status(404).json({message:'Book not found'});
+};
 module.exports = {
   getAll,
   getById,
   create,
+  update,
 }
