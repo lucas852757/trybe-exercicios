@@ -28,10 +28,16 @@ const destroy = async (id) => {
 
   return removed;
 };
+
+const getByAuthor = async (author) => {
+  const response = await Book.findAll({where: {author}});
+  return response;
+}
 module.exports = {
   getAll,
   getById,
   create,
   update,
   destroy,
+  getByAuthor,
 }
