@@ -55,9 +55,24 @@ const update = async (req, res, next) => {
   if(book) return res.status(201).json({message: 'Book updated'});
   res.status(404).json({message:'Book not found'});
 };
+
+/**
+ * 
+ * @param {import('express').Request} req 
+ * @param {import('express').Response} res 
+ * @param {import('express').NextFunction} next 
+ */
+const destroy = async (req, res, next) => {
+  const { id } = req.params;
+  const removed = await BooksServices.destroy(id); 
+
+  if(removed) return res.status(200).json({message: 'Book removed'});
+  res.status(404).json({message: 'Book not found'});
+}
 module.exports = {
   getAll,
   getById,
   create,
   update,
+  destroy,
 }
