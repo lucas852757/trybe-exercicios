@@ -7,8 +7,15 @@ const BooksServices = require('../services/BooksServices')
  * @param {import('express').NextFunction} next 
  */
 const getAll = async (req, res, next) => {
-  const book = await BooksServices.getAll();
-  res.status(200).json(book);
+  const { author} = req.query;
+
+  if(author) {
+    const books = await BooksServices.getByAuthor(author);
+  } else {
+    const books = await BooksServices.getAll();
+  }
+  
+  res.status(200).json(books);
 };
 
 /**
@@ -69,6 +76,7 @@ const destroy = async (req, res, next) => {
   if(removed) return res.status(200).json({message: 'Book removed'});
   res.status(404).json({message: 'Book not found'});
 }
+
 module.exports = {
   getAll,
   getById,
